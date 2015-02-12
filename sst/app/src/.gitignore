@@ -1,0 +1,5 @@
+sst
+Makefile
+Makefile.in
+*.o
+*~
