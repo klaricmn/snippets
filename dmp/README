@@ -1,0 +1,8 @@
+Type 'make' to compile the code.
+
+Then run it with the following:
+
+./dmp smallearth.png 3 7 11 15 19 23
+./dmp europe.png 3 5 7 9
+
+The first argument is the filename to be processed and the remaining arguments are the structuring element radii

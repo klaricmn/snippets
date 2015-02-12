@@ -2,13 +2,19 @@ CPPFLAGS = -O2 -Wall
 
 INCL_DIR = 
 
-LIBS = -lboost_system -lboost_thread
+LIBS = -Wl,--as-needed -lboost_system -lboost_thread -lboost_filesystem
 
-APPS = accumulate iter_split threadpool tokenizer
+APPS = accumulate cdf filesystem iter_split threadpool tokenizer
 
 all: $(APPS)
 
 accumulate: accumulate.o
+	g++ $(CPPFLAGS) -o $@ $< $(LIBS)
+
+cdf: cdf.o
+	g++ $(CPPFLAGS) -o $@ $< $(LIBS)
+
+filesystem: filesystem.o
 	g++ $(CPPFLAGS) -o $@ $< $(LIBS)
 
 iter_split: iter_split.o
